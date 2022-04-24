@@ -15,6 +15,8 @@ public class DepartmentController {
 
     @GetMapping("/departments")
     public String allDepartments(Model model){
+        model.addAttribute("departments",departmentRepository.getAllEntities());
+
         return "departments";
     }
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register employee</title>
+    <link rel="stylesheet" th:href="@{style.css}"  type="text/css">
+</head>
+<body>
+<h1>Register employee </h1>
+<form action="./create-new-employee.html" method="POST">
+    <label for="id">Enter ID: </label>
+    <input id="id" name="id" type="number" required>
+    <label for="name">Enter full name: </label>
+    <input type="text" name="name" id="name">
+    <label for="job">Job title: </label>
+    <input type="text" name="job" id="job">
+    <label for="manager">Manager number: </label>
+    <input type="number" name="manager" id="manager">
+    <label for="hiredate">Date of hiring (YYYY-MM-DD): </label>
+    <input type="date" name="hiredate" id="hiredate" value="2022-04-24">
+    <label for="salary">Choose salary: </label>
+    <input type="range" name="salary" id="salary" min="22000" max="65000" step="500">
+    <label for="commission">Commission: </label>
+    <input type="number" name="commission" id="commission" step="0.5">
+    <label for="deptno">Depertment no.: </label>
+    <input type="number" name="deptno" id="deptno">
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

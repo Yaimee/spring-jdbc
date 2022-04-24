@@ -1,5 +1,7 @@
 package com.example.demo.repositories;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.List;
 
 public interface CRUDInterface <T>{
@@ -7,7 +9,7 @@ public interface CRUDInterface <T>{
     public boolean create(T entity);
 
     //Read
-    public T getSingleEntityById();
+    public T getSingleEntityById(@RequestParam(required = false) String id);
     public List<T> getAllEntities();
 
     //Update

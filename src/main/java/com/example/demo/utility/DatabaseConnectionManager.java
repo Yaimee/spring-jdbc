@@ -27,15 +27,13 @@ public class DatabaseConnectionManager {
 //            password = props.getProperty("db.password");
 //            conn = DriverManager.getConnection(url, username, password);
 //        }
-        try{
+        try {
             //Environment Variables
             url = System.getenv("db.url");
             username = System.getenv("db.username");
             password = System.getenv("db.password");
             conn = DriverManager.getConnection(url, username, password);
-        }
-
-        catch(SQLException e){
+        } catch(SQLException e) {
             e.printStackTrace();
         }
         return conn;

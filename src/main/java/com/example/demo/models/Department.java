@@ -1,22 +1,28 @@
 package com.example.demo.models;
 
+import java.sql.ResultSet;
+
 public class Department {
-    private int deptno;
+    private int deptNo;
     private String deptName;
     private String location;
 
-    public Department(int deptno, String deptName, String location) {
-        this.deptno = deptno;
-        this.deptName = deptName;
-        this.location = location;
+    public Department(ResultSet rs) {
+        try {
+            this.deptNo = rs.getInt(1);
+            this.deptName = rs.getString(2);
+            this.location = rs.getString(3);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public int getDeptno() {
-        return this.deptno;
+        return this.deptNo;
     }
 
     public void setDeptno(int deptno) {
-        this.deptno = deptno;
+        this.deptNo = deptno;
     }
 
     public String getDeptName() {
@@ -38,7 +44,7 @@ public class Department {
     @Override
     public String toString() {
         return "Department{" +
-                "deptno=" + deptno +
+                "deptno=" + deptNo +
                 ", deptName='" + deptName + '\'' +
                 ", location='" + location + '\'' +
                 '}';

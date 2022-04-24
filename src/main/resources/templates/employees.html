@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link rel="stylesheet" th:href="@{style.css}"  type="text/css">
+</head>
+<body>
+<h1>An overview of our employees</h1>
+    <tr th:if="${employees.isEmpty()}">
+        <td colspan="2"> No employees available </td>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <td><span th:text="${employee.toString()}"> Employee </span></td>
+    </tr>
+</table>
+</body>
+</html>

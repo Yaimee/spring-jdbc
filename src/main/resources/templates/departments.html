@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Departments</title>
@@ -8,11 +8,11 @@
 <body>
     <h1>An overview of our departments</h1>
     <table>
-        <tr
-            th:each="department : ${departments}">
-            <td th:text="${department.getDeptno()}"></td>
-            <td th:text="${department.getDeptName()}"></td>
-            <td th:text="${department.getLocation()}"></td>
+        <tr th:if="${departments.isEmpty()}">
+            <td colspan="2"> No departments available </td>
+        </tr>
+        <tr th:each="department : ${departments}">
+            <td th:text="${department.toString()}"></td>
         </tr>
     </table>
 </body>
